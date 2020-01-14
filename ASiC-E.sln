@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Fiks.ASiC-E", "KS.Fiks.ASiC-E\KS.Fiks.ASiC-E.csproj", "{19562E89-253A-441D-BF74-B4822FA24B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acos.Felles.ASiC-E", "Acos.Felles.ASiC-E\Acos.Felles.ASiC-E.csproj", "{19562E89-253A-441D-BF74-B4822FA24B87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KS.Fiks.ASiC-E.Test", "KS.Fiks.ASiC-E.Test\KS.Fiks.ASiC-E.Test.csproj", "{FDD528A3-2DC8-4CC8-A57C-07E81F99E817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acos.Felles.ASiC-E.Test", "Acos.Felles.ASiC-E.Test\Acos.Felles.ASiC-E.Test.csproj", "{FDD528A3-2DC8-4CC8-A57C-07E81F99E817}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19562E89-253A-441D-BF74-B4822FA24B87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +41,11 @@ Global
 		{FDD528A3-2DC8-4CC8-A57C-07E81F99E817}.Release|x64.Build.0 = Release|Any CPU
 		{FDD528A3-2DC8-4CC8-A57C-07E81F99E817}.Release|x86.ActiveCfg = Release|Any CPU
 		{FDD528A3-2DC8-4CC8-A57C-07E81F99E817}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BF8E1C61-9460-452B-8D59-A4A9CBC8A0F4}
 	EndGlobalSection
 EndGlobal

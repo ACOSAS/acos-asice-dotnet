@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Acos.Felles.ASiCE.Test</RootNamespace>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <IsPackable>false</IsPackable>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Acos.Felles.ASiC-E.Test</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.6.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0-preview-20190606-02" />
+    <PackageReference Include="Moq" Version="4.11.0" />
+    <PackageReference Include="serilog" Version="2.9.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.analyzers" Version="0.10.0" PrivateAssets="All" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="small.pdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="fiks_demo_private.pem" />
+    <EmbeddedResource Include="fiks_demo_private.pem">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="fiks_demo_public.pem" />
+    <EmbeddedResource Include="fiks_demo_public.pem">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="resources\cades-valid.asice" />
+    <EmbeddedResource Include="resources\cades-valid.asice">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="resources\xades-external-dss.asice" />
+    <EmbeddedResource Include="resources\xades-external-dss.asice">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="resources\xades-external-sdp.asice" />
+    <EmbeddedResource Include="resources\xades-external-sdp.asice">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="Sign\signature.p7s" />
+    <EmbeddedResource Include="Sign\signature.p7s">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Remove="Sign\signedData.xml" />
+    <EmbeddedResource Include="Sign\signedData.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="temp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Acos.Felles.ASiC-E\Acos.Felles.ASiC-E.csproj" />
+  </ItemGroup>
+
+</Project>
