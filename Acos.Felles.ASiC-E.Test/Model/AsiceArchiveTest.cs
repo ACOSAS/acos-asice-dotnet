@@ -3,22 +3,26 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using Acos.Felles.ASiCE.Manifest;
+using Acos.Felles.ASiCE.Model;
 using FluentAssertions;
 using NLog;
 using Xunit;
 
 namespace Acos.Felles.ASiCE.Test.Model
 {
-    public class AsiceArchiveTest : IClassFixture<LogFixture>
+    public class AsiceArchiveTest //: IClassFixture<LogFixture>
     {
         private const string FileNameTestPdf = "small.pdf";
-        private readonly Logger log;
-        private LogFixture logFixture;
+        //private readonly Logger log;
+        //private LogFixture logFixture;
 
-        public AsiceArchiveTest(LogFixture logFixture)
+        public AsiceArchiveTest(
+            //LogFixture logFixture
+            )
         {
-            this.logFixture = logFixture;
-            log = this.logFixture.GetLog<AsiceArchiveTest>();
+            //this.logFixture = logFixture;
+            //log = this.logFixture.GetLog<AsiceArchiveTest>();
         }
 
         [Fact(DisplayName = "Create ASiC-E package")]
@@ -68,7 +72,7 @@ namespace Acos.Felles.ASiCE.Test.Model
 
                     var manifestXml = Encoding.UTF8.GetString(copyStream.ToArray());
                     manifestXml.Should().NotBeNull();
-                    log.Info($"Manifest: {manifestXml}");
+                    //log.Info($"Manifest: {manifestXml}");
                 }
 
                 var signatureFile = zippedArchive.Entries
@@ -93,7 +97,7 @@ namespace Acos.Felles.ASiCE.Test.Model
                 zippedStream.CopyTo(outputFileStream);
             }
 
-            log.Info($"Wrote package to '{tempFileName}'");
+            //log.Info($"Wrote package to '{tempFileName}'");
         }
     }
 }

@@ -3,6 +3,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
+using Acos.Felles.ASiCE.Model;
 using FluentAssertions;
 using Xunit;
 
@@ -63,7 +64,7 @@ namespace Acos.Felles.ASiCE.Test.Model
                     var newEntry = createdArchive.CreateEntry(AsiceConstants.FileNameMimeType);
                     using (var entryStream = newEntry.Open())
                     {
-                        entryStream.Write(Encoding.UTF8.GetBytes((string) AsiceConstants.ContentTypeASiCe));
+                        entryStream.Write(Encoding.UTF8.GetBytes((string)AsiceConstants.ContentTypeASiCe));
                     }
                 }
 
@@ -72,9 +73,9 @@ namespace Acos.Felles.ASiCE.Test.Model
                     using (var readArchive = new ZipArchive(zipInStream, ZipArchiveMode.Read))
                     {
                         var asiceArchive = AsiceReadModel.Create(readArchive);
-                        AssertionExtensions.Should((object) asiceArchive).NotBeNull();
+                        AssertionExtensions.Should((object)asiceArchive).NotBeNull();
                         Enumerable.Count(asiceArchive.Entries).Should().Be(0);
-                        AssertionExtensions.Should((object) asiceArchive.CadesManifest).BeNull();
+                        AssertionExtensions.Should((object)asiceArchive.CadesManifest).BeNull();
                     }
                 }
             }
@@ -88,8 +89,8 @@ namespace Acos.Felles.ASiCE.Test.Model
                 using (var zip = new ZipArchive(asicStream, ZipArchiveMode.Read))
                 using (var asice = AsiceReadModel.Create(zip))
                 {
-                    AssertionExtensions.Should((object) asice.CadesManifest).NotBeNull();
-                    AssertionExtensions.Should((object) asice.Signatures).NotBeNull();
+                    AssertionExtensions.Should((object)asice.CadesManifest).NotBeNull();
+                    AssertionExtensions.Should((object)asice.Signatures).NotBeNull();
                     foreach (var asiceReadEntry in asice.Entries)
                     {
                         using (var entryStream = asiceReadEntry.OpenStream())
@@ -100,7 +101,7 @@ namespace Acos.Felles.ASiCE.Test.Model
                         }
                     }
 
-                    AssertionExtensions.Should((bool) asice.DigestVerifier.Verification().AllValid).BeTrue();
+                    AssertionExtensions.Should((bool)asice.DigestVerifier.Verification().AllValid).BeTrue();
                 }
             }
         }
@@ -128,12 +129,12 @@ namespace Acos.Felles.ASiCE.Test.Model
                     var entries = asicePackage.Entries;
                     Enumerable.Count(entries).Should().Be(1);
                     var cadesManifest = asicePackage.CadesManifest;
-                    AssertionExtensions.Should((object) cadesManifest).NotBeNull();
+                    AssertionExtensions.Should((object)cadesManifest).NotBeNull();
 
-                    AssertionExtensions.Should((int) cadesManifest.Digests.Count).Be(1);
-                    AssertionExtensions.Should((object) asicePackage.DigestVerifier).NotBeNull();
-                    AssertionExtensions.Should((string) cadesManifest.SignatureFileName).NotBeNull();
-                    AssertionExtensions.Should((object) asicePackage.Signatures).NotBeNull();
+                    AssertionExtensions.Should((int)cadesManifest.Digests.Count).Be(1);
+                    AssertionExtensions.Should((object)asicePackage.DigestVerifier).NotBeNull();
+                    AssertionExtensions.Should((string)cadesManifest.SignatureFileName).NotBeNull();
+                    AssertionExtensions.Should((object)asicePackage.Signatures).NotBeNull();
                     Enumerable.Count(asicePackage.Signatures.Containers).Should().Be(1);
 
                     var firstEntry = Enumerable.First(entries);
@@ -145,8 +146,8 @@ namespace Acos.Felles.ASiCE.Test.Model
                     }
 
                     var verificationResult = asicePackage.DigestVerifier.Verification();
-                    AssertionExtensions.Should((object) verificationResult).NotBeNull();
-                    AssertionExtensions.Should((bool) verificationResult.AllValid).BeTrue();
+                    AssertionExtensions.Should((object)verificationResult).NotBeNull();
+                    AssertionExtensions.Should((bool)verificationResult.AllValid).BeTrue();
                 }
             }
         }
