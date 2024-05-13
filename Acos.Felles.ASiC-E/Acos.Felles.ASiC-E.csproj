@@ -17,7 +17,7 @@
     <PackageIconUrl>https://www.acos.no/kunde/favicon.ico</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>ACOS</PackageTags>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0</TargetFrameworks>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <AssemblyName>Acos.Felles.ASiC-E</AssemblyName>
@@ -26,7 +26,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acos.Felles.MimeTypes" Version="3.0.0">
+    <PackageReference Include="Acos.Felles.MimeTypes" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

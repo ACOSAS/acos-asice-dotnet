@@ -4,7 +4,7 @@
     <RootNamespace>Acos.Felles.ASiCE.Test</RootNamespace>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <IsPackable>false</IsPackable>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>Acos.Felles.ASiC-E.Test</AssemblyName>
   </PropertyGroup>
 
